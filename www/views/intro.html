@@ -1,0 +1,94 @@
+<ons-page>
+    <!-- <ons-toolbar>
+        <div class="center">Navigator</div>
+    </ons-toolbar> -->
+
+    <!-- <div style="text-align: center">
+        <br>
+        <ons-button
+            onclick="myNavigator.pushPage('page2.html')">
+            Hello wolrld
+        </ons-button>
+    </div>
+     -->
+    <ons-carousel swipeable overscrollable auto-scroll fullscreen var="carousel">
+    <ons-carousel-item class="carousel-item" style="background-color: #1c2c49;"><!-- 2F8AC4 -->
+      <div class="item-label">Intro page 1</div>
+    </ons-carousel-item>
+    <ons-carousel-item class="carousel-item" style="background-color: #263d61;">
+      <div class="item-label">Intro page 2</div>
+    </ons-carousel-item>
+    <!-- page 3 -->
+    <ons-carousel-item class="carousel-item" style="background-color: #3E79A6;">
+        <div class="container" >
+            <img src="../images/bot1.png" style="height:10%; width:20%;">
+            <br><br>
+            <div style="color:#fff;">
+                <h4>Hello i am Chipz</h4>
+                <h4>Whats your name please?</h4>
+            </div>
+            <ons-form class="form" action="#">
+                <fieldset class="form-fieldset ui-input __first" >
+                    <input type="text" id="username" tabindex="0" />
+                        <label for="username">
+                            <span data-text="Name" style="content: attr(data-text);"></span>
+                        </label>
+                </fieldset>
+<!--                 <ons-button onclick="appNavigator.pushPage('./views/dashboard.html')">
+                    <a href="#" class="btn btn-sm animated-button sandy-four" style="width:30%!important; ">Chat</a>
+                </ons-button> -->
+                <ons-button class="btn btn-sm animated-button sandy-four" style="width:30%!important;" onclick="appNavigator.pushPage('./views/dashboard.html')">
+                    Done
+                </ons-button>   
+            </ons-form>
+        </div>
+        <script type="text/javascript">
+            // Works with both Cordova and Ionic keyboard plugin
+            ons.softwareKeyboard.on('show', function() {
+            var $htmlOrBody = $('html, body'), // scrolling happens on body for some browsers, html for others
+                scrollTopPadding = 8,
+                scrollTopLast = 0;
+            $('fieldset').focus(function() {
+            });
+            ons.softwareKeyboard.on('hide', function() 
+              // Some code when the keyboard is hidden
+            }).blur(function() {
+                // scroll back to position before textarea focus
+                $htmlOrBody.scrollTop(scrollTopLast);
+                });
+        </script>
+        <script src="jquery-2.1.3.min.js"></script>
+    </ons-carousel-item>
+   <!--  <ons-carousel-item class="carousel-item" style="background-color: #263D61;">
+      <div class="item-label">Intro page 3</div>
+    </ons-carousel-item> -->
+<!--     <ons-carousel-item class="" style="background-color: #5187b6;">
+      <div class="item-label">
+          <div style="text-align: center">
+        <br>
+        <ons-button
+            onclick="appNavigator.pushPage('./views/dashboard.html')">
+            Get started
+        </ons-button>
+    </div>
+      </div>
+    </ons-carousel-item>
+ -->    <!-- <ons-carousel-cover>
+      <div class="cover-label">
+        Swipe left or right
+    </div>
+    </ons-carousel-cover> -->
+  </ons-carousel>
+
+
+    <style>
+        .carousel-item{
+            font-size: 2em;
+            color: white;
+            padding-top: 20%;
+        }
+    </style>
+
+
+
+</ons-page>

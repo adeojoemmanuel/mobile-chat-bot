@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html  ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+  <script src="lib/onsenui/js/angular-onsenui.min.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="lib/material/material.min.js"></script>
+  <script src="js/chatController.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="lib/material/material.min.css">
+  <link rel="stylesheet" href="css/simple-line-icons.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/stylee.css">
+  <link rel="stylesheet" href="css/mystyle.css">
+
+</head>
+<body ng-controller="urgentController as urgent">
+ <ons-page>
+   <ons-toolbar>
+     <div class="center">Introduction</div>
+   </ons-toolbar>
+ 
+   <div class="content" style="margin: 10px;">
+     <p>What is your name?</p>
+     <p>
+       <ons-input modifier="underbar" ng-model="urgent.world" placeholder="Your name" float></ons-input>
+     </p>
+     <p>
+       Hello, {{ urgent.world || 'stranger' }}!
+     </p>
+   </div>
+ </ons-page>
+ <!-- <ons-navigator page="views/intro.html" var="appNavigator"></ons-navigator> -->
+ <ons-navigator page="views/chat.html" var="appNavigator"></ons-navigator>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!-- <ons-page ons-show="app.title = 'Bibi'"> -->
+	<ons-toolbar>
+      <div class="left" style="line-height: 44px">
+        <ons-back-button>Back</ons-back-button>
+      </div>
+	    <div class="center">{{urgent.robot}}</div>
+	</ons-toolbar>
+  <div class="content" style="text-align: center;overflow-y: hidden;" id="chat-page-content">
+        <div class="chat-window">
+          <div class="messages-section">
+            <!-- <div class="receive message">
+              Hi i'm milo
+            </div>
+            <div class="send message">
+              Hey, what's up?
+            </div>
+            <div class="receive message">
+              nm, I'm growing back my mustache and admiring myself in the mirror.
+            </div>
+            <div class="send message">
+              That's really weird, you should probably go outside.
+            </div>
+            <div class="receive message">
+              Good idea, other people need to admire my mustache, ttyl. 
+            </div>
+            <div class="receive message">
+              Or should i wait a bit?
+            </div>
+            <div class="send message">
+              No it's cool...we can chat later
+            </div>
+            <div class="receive message">
+              Okay babe .... I love you.
+            </div>
+            <div class="send message">
+              Yeah yeah. whatever. *smh*
+            </div>
+            <div class="receive message">
+              I said i'm sorry babe..
+            </div>
+            <div class="send message">
+              torhh .....i've heard you ooo. {{urgent.msg}}
+            </div> -->
+          </div>
+
+          <div class="textbox form-input flexbox">
+            <button id="convert" class="button icon-microphone sendbtn"></button>
+            <input type="text" ng-model="urgent.msg" placeholder="Type message..." class="msgbox">
+            <button id="convert" ng-click="submit(urgent.msg)" class="button icon-paper-plane sendbtn"></button>
+          </div>
+        </div> 
+    </div>
+
+    <style type="text/css">
+      /* *{
+        overflow-y: hidden;
+      }
+      .chat-window{
+        overflow-y: hidden !important;
+        overflow-x: hidden;
+      }
+      .textbox{
+        position: absolute;
+        clear: both;
+        float: left;
+      }
+      input[type='text']{
+        background: #E2F0F9 #F2F9FF; 
+        outline: none;
+        border: none;
+        height: 9vh !important;
+        width: 85.08vw;
+        padding-left: 2%;
+        font-size: 1.1em;
+        box-shadow: none;
+        font-family: 'Source Sans Pro', sans-serif;
+      }
+      .flexbox{
+        display: flex;
+      }
+      .msgbox{
+        flex: 1;
+      }
+      .sendbtn{
+        min-width: 9.8vw;
+        font-size: 1.6em;
+        background: #F2F9FF;
+        color: black;
+        padding-left: 2%;
+      }
+      .messages-section{
+        height: 71.5vh;
+        padding: 2%;
+        background: #F2F9FF;
+        overflow: auto;
+      }
+      .chat{
+        padding: 4%;
+      }
+      .message {
+        border-radius: 5px;
+        clear: both;
+        margin: 5px 0;
+        max-width: 80%;
+        padding: 10px 15px;
+        text-align: left;
+        position: relative;
+        box-shadow: 3.4px 5px 4px 1px #E2F0F9;
+        font-weight: lighter;
+      }
+      .receive {
+        background: #FFFFFF;
+        float: left;
+        max-width: 50%;
+        margin: 2%;
+        border-radius: 14px;
+        border-top-left-radius: 0;
+      }
+      .receive:after {
+        box-shadow: inset 1px 9px 0 4px #fff, inset -9px 0px 0 2px #dedede, 0 0 0 1px #fff;
+        left: -19px;
+      }
+      .send {
+        background: #7DA0FC;
+        color: #fff;
+        float: right;
+        margin: 1%;
+        max-width: 50%;
+        border-radius: 14px;
+        border-bottom-right-radius: 0;
+      }
+      .send:after {
+        box-shadow: inset -1px 9px 0 4px #fff, inset 9px 1px 0 2px #2d8cfa, 0 0 0 1px #fff;
+        right: -19px;
+      }
+      #### Mobile Phones Portrait or Landscape ####
+      @media screen and (min-device-width: 300px) and (max-device-width: 400px){
+        some CSS here
+        .chat-window{
+          color: #BA53DE;
+        }
+        input[type='text']{
+          width: 70vw !important;
+        }
+        .messages-section{
+          height: 73vh;
+          padding: 2%;
+          background: #F2F9FF;
+          overflow: auto;
+        }
+        .sendbtn{
+          width: 15vw;
+        }
+      }
+      
+      @media screen and (min-device-width: 400px) and (max-device-width: 420px){
+        .chat-window{
+          color: red;
+        }
+        input[type='text']{
+          width: 70vw !important;
+        }
+        .messages-section{
+          height: 77vh;
+          padding: 2%;
+          background: #F2F9FF;
+          overflow: auto;
+        }
+        .sendbtn{
+          width: 15vw;
+        }
+      }
+      
+      @media screen and (min-device-width: 420px) and (max-device-width: 640px){
+        some CSS here
+        .chat-window{
+          color: #BA53DE;
+        }
+        input[type='text']{
+          width: 70vw !important;
+        }
+        .messages-section{
+          height: 73vh;
+          padding: 2%;
+          background: #F2F9FF;
+          overflow: auto;
+        }
+        .sendbtn{
+          width: 15vw;
+        }
+      }
+      
+      @media screen and (min-device-width: 640px) and (max-device-width: 1024px){
+        some CSS here
+        .chat-window{
+          color: #F469A9;
+        }
+        input[type='text']{
+          width: 79.95vw !important;
+        }
+        .messages-section{
+          height: 80vh;
+          padding: 2%;
+          background: #F2F9FF;
+          overflow: auto;
+        }
+      }
+      
+      @media screen and (min-device-width: 1024px){
+        some CSS here
+        .chat-window{
+          color: #000;
+        }
+        input[type='text']{
+          width: 80vw !important;
+        }
+        .messages-section{
+          height: 83vh;
+          padding: 2%;
+          background: #F2F9FF;
+          overflow: auto;
+        }
+      } */
+      .test{
+        color: green;
+      }
+    </style>
+    <script type="text/javascript">
+      
+    </script>
+<!-- </ons-page> -->
